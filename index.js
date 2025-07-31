@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const movieRouter = require('./routes/serverRoutes');
+const movieRouter = require('./routes/movies');
 const connection = require('./db/connection');
 
 const port = process.env.PORT;
@@ -15,6 +15,10 @@ app.use('/api/movies', movieRouter);
 
 app.get('/', (req, res)=>{
     res.send('Welcome to my app')
+});
+
+app.get('/:id', (req, res)=>{
+    console.log(req.params.id);
 });
 
 app.listen(port, ()=>{
