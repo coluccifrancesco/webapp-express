@@ -28,8 +28,6 @@ function show (req, res){
             message: err.message
         })
     
-        console.log(result);
-    
         if (result.length === 0) {
             return res.status(404).json({
                 error: true,
@@ -50,10 +48,10 @@ function show (req, res){
             const movieReviews = result;
             console.log(movieReviews);
             movie.reviews = movieReviews;
+            res.json(movie);
         })
 
         console.log(movie);
-        res.json(movie)
     })
     
 };

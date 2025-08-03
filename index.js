@@ -13,6 +13,7 @@ app.use(cors());
 // Utilizzo asset statici (foto)
 app.use(express.static('./public'));
 
+// verifica postman e la risposta, poi configura chiamata su react
 
 // Utilizzo router
 app.use('/api/movies', movieRouter);
