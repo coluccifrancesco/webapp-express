@@ -6,8 +6,13 @@ const connection = require('./db/connection');
 
 const port = process.env.PORT;
 
+// Imposto CORS per permettere chiamata api
+const cors = require('cors');
+app.use(cors());
+
 // Utilizzo asset statici (foto)
 app.use(express.static('./public'));
+
 
 // Utilizzo router
 app.use('/api/movies', movieRouter);
