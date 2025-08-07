@@ -10,4 +10,7 @@ movieRouter.get('/', movieController.index);
 // Mostra singolo film
 movieRouter.get('/:id', movieController.show);
 
+// Posta la recensione nuova
+movieRouter.post('/:id', movieController.post); 
+
 module.exports = movieRouter;
